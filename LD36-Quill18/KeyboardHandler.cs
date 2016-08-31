@@ -84,22 +84,22 @@ namespace LD36Quill18
 
         public static void Update_Keyboard_Normal(ConsoleKeyInfo cki)
         {
-            if (cki.Key == ConsoleKey.RightArrow || cki.Key == ConsoleKey.NumPad6)
+            if (cki.Key == ConsoleKey.RightArrow || cki.Key == ConsoleKey.NumPad6 || cki.Key == ConsoleKey.D)
             {
                 PlayerCharacter.Instance.QueueMoveBy(1, 0);
                 Game.Instance.DoTick();
             }
-            else if (cki.Key == ConsoleKey.LeftArrow || cki.Key == ConsoleKey.NumPad4)
+            else if (cki.Key == ConsoleKey.LeftArrow || cki.Key == ConsoleKey.NumPad4 || cki.Key == ConsoleKey.A)
             {
                 PlayerCharacter.Instance.QueueMoveBy(-1, 0);
                 Game.Instance.DoTick();
             }
-            else if (cki.Key == ConsoleKey.UpArrow || cki.Key == ConsoleKey.NumPad8)
+            else if (cki.Key == ConsoleKey.UpArrow || cki.Key == ConsoleKey.NumPad8 || cki.Key == ConsoleKey.W)
             {
                 PlayerCharacter.Instance.QueueMoveBy(0, -1);
                 Game.Instance.DoTick();
             }
-            else if (cki.Key == ConsoleKey.DownArrow || cki.Key == ConsoleKey.NumPad2)
+            else if (cki.Key == ConsoleKey.DownArrow || cki.Key == ConsoleKey.NumPad2 || cki.Key == ConsoleKey.S)
             {
                 PlayerCharacter.Instance.QueueMoveBy(0, 1);
                 Game.Instance.DoTick();
@@ -283,22 +283,22 @@ namespace LD36Quill18
                 Game.Instance.DoTick();
                 return;
             }
-            else if (cki.Key == ConsoleKey.RightArrow || cki.Key == ConsoleKey.NumPad6)
+            else if (cki.Key == ConsoleKey.RightArrow || cki.Key == ConsoleKey.NumPad6 || cki.Key == ConsoleKey.D)
             {
                 aimingOverlay.X += 1;
                 aimingOverlay.Y += 0;
             }
-            else if (cki.Key == ConsoleKey.LeftArrow || cki.Key == ConsoleKey.NumPad4)
+            else if (cki.Key == ConsoleKey.LeftArrow || cki.Key == ConsoleKey.NumPad4 || cki.Key == ConsoleKey.A)
             {
                 aimingOverlay.X -= 1;
                 aimingOverlay.Y += 0;
             }
-            else if (cki.Key == ConsoleKey.UpArrow || cki.Key == ConsoleKey.NumPad8)
+            else if (cki.Key == ConsoleKey.UpArrow || cki.Key == ConsoleKey.NumPad8 || cki.Key == ConsoleKey.W)
             {
                 aimingOverlay.X += 0;
                 aimingOverlay.Y -= 1;
             }
-            else if (cki.Key == ConsoleKey.DownArrow || cki.Key == ConsoleKey.NumPad2)
+            else if (cki.Key == ConsoleKey.DownArrow || cki.Key == ConsoleKey.NumPad2 || cki.Key == ConsoleKey.S)
             {
                 aimingOverlay.X += 0;
                 aimingOverlay.Y += 1;
@@ -355,22 +355,22 @@ namespace LD36Quill18
 
                 return;
             }
-            else if (cki.Key == ConsoleKey.RightArrow || cki.Key == ConsoleKey.NumPad6)
+            else if (cki.Key == ConsoleKey.RightArrow || cki.Key == ConsoleKey.NumPad6 || cki.Key == ConsoleKey.D)
             {
                 overlay.X += 1;
                 overlay.Y += 0;
             }
-            else if (cki.Key == ConsoleKey.LeftArrow || cki.Key == ConsoleKey.NumPad4)
+            else if (cki.Key == ConsoleKey.LeftArrow || cki.Key == ConsoleKey.NumPad4 || cki.Key == ConsoleKey.A)
             {
                 overlay.X -= 1;
                 overlay.Y += 0;
             }
-            else if (cki.Key == ConsoleKey.UpArrow || cki.Key == ConsoleKey.NumPad8)
+            else if (cki.Key == ConsoleKey.UpArrow || cki.Key == ConsoleKey.NumPad8 || cki.Key == ConsoleKey.W)
             {
                 overlay.X += 0;
                 overlay.Y -= 1;
             }
-            else if (cki.Key == ConsoleKey.DownArrow || cki.Key == ConsoleKey.NumPad2)
+            else if (cki.Key == ConsoleKey.DownArrow || cki.Key == ConsoleKey.NumPad2 || cki.Key == ConsoleKey.S)
             {
                 overlay.X += 0;
                 overlay.Y += 1;
