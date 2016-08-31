@@ -36,7 +36,7 @@ namespace LD36Quill18
                 }
                 if (cheatsEnabled && ((cki.Modifiers & ConsoleModifiers.Control) != 0) && cki.Key == ConsoleKey.OemPeriod)
                 {
-                    PlayerCharacter.Instance.ChangeFloor(PlayerCharacter.Instance.Floor.FloorIndex + 1);
+                   PlayerCharacter.Instance.ChangeFloor(PlayerCharacter.Instance.Floor.FloorIndex + 1);
 
                 }
                 if (cheatsEnabled && ((cki.Modifiers & ConsoleModifiers.Control) != 0) && cki.Key == ConsoleKey.OemComma)
@@ -129,12 +129,12 @@ namespace LD36Quill18
                 // Do nothing
                 Game.Instance.DoTick();
             }
-            else if (cki.Key == ConsoleKey.OemPeriod || cki.KeyChar == '.' || cki.KeyChar == '>')
+			else if (cki.Key == ConsoleKey.OemPeriod || cki.KeyChar=='.' || cki.KeyChar=='>')
             {
                 PlayerCharacter.Instance.GoDown();
                 Game.Instance.DoTick();
             }
-            else if (cki.Key == ConsoleKey.OemComma || cki.KeyChar == ',' || cki.KeyChar == '<')
+			else if (cki.Key == ConsoleKey.OemComma || cki.KeyChar == ',' || cki.KeyChar == '<')
             {
                 PlayerCharacter.Instance.GoUp();
                 Game.Instance.DoTick();
@@ -228,7 +228,7 @@ namespace LD36Quill18
                             Game.Instance.Message(PlayerCharacter.Instance.EquippedItems[i].FullDescription);
                         }
                     }
-                    else
+                    else 
                     {
                         if (PlayerCharacter.Instance.Items[i] != null)
                         {
@@ -253,7 +253,7 @@ namespace LD36Quill18
                                 PlayerCharacter.Instance.Money += 10;
                             }
                         }
-                        else
+                        else 
                         {
                             PlayerCharacter.Instance.UseItem(i);
                         }
@@ -283,22 +283,22 @@ namespace LD36Quill18
                 Game.Instance.DoTick();
                 return;
             }
-            else if (cki.Key == ConsoleKey.RightArrow || cki.Key == ConsoleKey.NumPad6)
+            else if (cki.Key == ConsoleKey.RightArrow || cki.Key == ConsoleKey.NumPad6 || cki.Key == ConsoleKey.D)
             {
                 aimingOverlay.X += 1;
                 aimingOverlay.Y += 0;
             }
-            else if (cki.Key == ConsoleKey.LeftArrow || cki.Key == ConsoleKey.NumPad4)
+            else if (cki.Key == ConsoleKey.LeftArrow || cki.Key == ConsoleKey.NumPad4 || cki.Key == ConsoleKey.A)
             {
                 aimingOverlay.X -= 1;
                 aimingOverlay.Y += 0;
             }
-            else if (cki.Key == ConsoleKey.UpArrow || cki.Key == ConsoleKey.NumPad8)
+            else if (cki.Key == ConsoleKey.UpArrow || cki.Key == ConsoleKey.NumPad8 || cki.Key == ConsoleKey.W)
             {
                 aimingOverlay.X += 0;
                 aimingOverlay.Y -= 1;
             }
-            else if (cki.Key == ConsoleKey.DownArrow || cki.Key == ConsoleKey.NumPad2)
+            else if (cki.Key == ConsoleKey.DownArrow || cki.Key == ConsoleKey.NumPad2 || cki.Key == ConsoleKey.S)
             {
                 aimingOverlay.X += 0;
                 aimingOverlay.Y += 1;
@@ -346,31 +346,31 @@ namespace LD36Quill18
 
                 if (tile.Character != null)
                 {
-                    Game.Instance.Message(Utility.WordWrap(tile.Character.Name + ": " + tile.Character.Description));
+                    Game.Instance.Message( Utility.WordWrap(tile.Character.Name + ": " + tile.Character.Description) );
                 }
                 if (tile.Item != null)
                 {
-                    Game.Instance.Message(Utility.WordWrap(tile.Item.FullDescription));
+                    Game.Instance.Message( Utility.WordWrap(tile.Item.FullDescription) );
                 }
 
                 return;
             }
-            else if (cki.Key == ConsoleKey.RightArrow || cki.Key == ConsoleKey.NumPad6)
+            else if (cki.Key == ConsoleKey.RightArrow || cki.Key == ConsoleKey.NumPad6 || cki.Key == ConsoleKey.D)
             {
                 overlay.X += 1;
                 overlay.Y += 0;
             }
-            else if (cki.Key == ConsoleKey.LeftArrow || cki.Key == ConsoleKey.NumPad4)
+            else if (cki.Key == ConsoleKey.LeftArrow || cki.Key == ConsoleKey.NumPad4 || cki.Key == ConsoleKey.A)
             {
                 overlay.X -= 1;
                 overlay.Y += 0;
             }
-            else if (cki.Key == ConsoleKey.UpArrow || cki.Key == ConsoleKey.NumPad8)
+            else if (cki.Key == ConsoleKey.UpArrow || cki.Key == ConsoleKey.NumPad8 || cki.Key == ConsoleKey.W)
             {
                 overlay.X += 0;
                 overlay.Y -= 1;
             }
-            else if (cki.Key == ConsoleKey.DownArrow || cki.Key == ConsoleKey.NumPad2)
+            else if (cki.Key == ConsoleKey.DownArrow || cki.Key == ConsoleKey.NumPad2 || cki.Key == ConsoleKey.S)
             {
                 overlay.X += 0;
                 overlay.Y += 1;
@@ -441,11 +441,12 @@ namespace LD36Quill18
 
                 pc.Money -= fu.NextUpgradeCost;
 
-                fu.OnPurchase(pc);
+                fu.OnPurchase( pc );
 
-                fu.NextUpgradeCost = (int)(fu.NextUpgradeCost * 2);
+                fu.NextUpgradeCost = (int)(fu.NextUpgradeCost*2);
             }
         }
 
     }
 }
+
